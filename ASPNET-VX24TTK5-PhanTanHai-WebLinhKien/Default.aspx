@@ -8,26 +8,41 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1000px; margin: 0 auto;">
-    <h2 style="color: #2c3e50; text-align: center;">HỆ THỐNG TRA CỨU VÀ TÌM KIẾM LINH KIỆN ĐIỆN TỬ</h2>
-    <p style="text-align: center; color: #7f8c8d;">Chuyên đề cá nhân môn học ASP.NET - Sinh viên: Phan Tấn Hải</p>
-    <hr style="border: 1px solid #eee;" />
-    
-    <br />
-    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
-        <!-- Áp dụng Bài 3: Control TextBox và Button cơ bản từ slide thầy Miền -->
-        <span style="font-weight: bold; font-size: 16px;">Tìm kiếm sản phẩm: </span>
-        <asp:TextBox ID="txtTimKiem" runat="server" Width="350px" Height="30px" placeholder="Nhập tên linh kiện cần tìm (Ví dụ: i5, RAM)..." style="padding-left: 10px; margin-left: 10px;"></asp:TextBox>
-        <asp:Button ID="btnTimKiem" runat="server" Text="Tìm Kiếm Tương Đối" OnClick="btnTimKiem_Click" BackColor="#3498db" ForeColor="White" Font-Bold="true" Height="36px" style="border: none; border-radius: 4px; cursor: pointer; margin-left: 10px; padding: 0 15px;" />
+        <div style="padding: 20px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; color: #2c3e50; font-weight: bold;">HỆ THỐNG CỬA HÀNG LINH KIỆN ĐIỆN TỬ CƠ BẢN</h2>
+    <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải</p>
+    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;" />
+
+    <!-- Phân hệ tra cứu lọc dữ liệu động bám sát từ khóa (Bài 3) -->
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 30px; text-align: center; border: 1px solid #e2e8f0;">
+        <span style="font-weight: bold; font-size: 15px; color: #4a5568;">Tìm kiếm linh kiện:</span>
+        <asp:TextBox ID="txtTimKiem" runat="server" Width="350px" Height="32px" placeholder="Nhập tên linh kiện (Arduino, cảm biến, CPU)..." style="padding-left: 10px; margin-left: 10px; border: 1px solid #cbd5e1; border-radius: 4px;"></asp:TextBox>
+        <asp:Button ID="btnTimKiem" runat="server" Text="Tìm Kiếm Tương Đối" OnClick="btnTimKiem_Click" BackColor="#3498db" ForeColor="White" Font-Bold="true" Height="38px" style="border:none; border-radius: 4px; cursor:pointer; margin-left: 10px; padding: 0 20px;" />
     </div>
 
-    <!-- Áp dụng Bài 3: Control nâng cao GridView hiển thị danh sách dạng lưới -->
-    <asp:GridView ID="gvSanPham" runat="server" AutoGenerateColumns="true" CellPadding="12" ForeColor="#333333" GridLines="Both" Width="100%" style="border-collapse: collapse; margin-top: 10px;">
-        <HeaderStyle BackColor="#2c3e50" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" HorizontalAlign="Center" />
-        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-    </asp:GridView>
+    <!-- Danh sách linh kiện hiển thị dạng Card lưới bằng Repeater (Bài 3 Nâng Cao) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+        <asp:Repeater ID="rptLinhKien" runat="server">
+            <ItemTemplate>
+                <div style="border: 1px solid #e2e8f0; border-radius: 8px; width: 260px; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background: #fff; transition: 0.3s;">
+                    
+                    <!-- Gọi hình ảnh linh kiện động từ thư mục HinhAnh -->
+                    <img src='<%# "HinhAnh/" + Eval("HinhAnh") %>' style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 15px; border-radius: 4px;" onerror="this.src='HinhAnh/arduino.jpg';" />
+                    
+                    <h3 style="color: #2d3748; font-size: 16px; margin: 10px 0; height: 45px; overflow: hidden; line-height: 1.4;"><%# Eval("TenSanPham") %></h3>
+                    <p style="color: #e53e3e; font-weight: bold; font-size: 18px; margin: 8px 0;"><%# Eval("GiaBan", "{0:N0}") %> VNĐ</p>
+                    <div style="background-color: #ebf8ff; color: #2b6cb0; font-size: 13px; font-weight: bold; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 15px;">
+                        Số lượng kho: <%# Eval("SoLuongTon") %> cái
+                    </div>
+                    
+                    <!-- Nút Đặt mua chuyển hướng sang trang đặt hàng kèm mã sản phẩm ID qua QueryString (Bài 4) -->
+                    <a href='<%# "DatHang.aspx?id=" + Eval("MaSanPham") %>' style="display: block; background: #38a169; color: white; text-decoration: none; padding: 10px 0; border-radius: 4px; font-weight: bold; font-size: 14px; text-transform: uppercase;">Đặt Mua Nhanh</a>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </div>
+
 
 
     </form>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Configuration;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // Bài 5: Thư viện ADO.NET căn bản của môn học
 
 namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 {
@@ -13,14 +13,16 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         {
             if (!IsPostBack)
             {
-                TaiDuLieuLinhKien("");
+                TaiDuLieuLinhKienMoi("");
             }
         }
 
-        private void TaiDuLieuLinhKien(string tuKhoa)
+        // Hàm kết nối SQL Server đọc dữ liệu linh kiện điện tử đổ vào Repeater
+        private void TaiDuLieuLinhKienMoi(string tuKhoa)
         {
-            string sql = "SELECT MaSanPham AS [Mã Linh Kiện], TenSanPham AS [Tên Linh Kiện], GiaBan AS [Giá Bán (VNĐ)], SoLuongTon AS [Số Lượng Tồn], ThongSoKyThuat AS [Thông Số Kỹ Thuật] FROM SanPham";
+            string sql = "SELECT MaSanPham, TenSanPham, GiaBan, SoLuongTon, HinhAnh FROM SanPham";
 
+            // Áp dụng thuật toán tìm kiếm tương đối mệnh đề LIKE (Tiêu chí số 7 phiếu điểm)
             if (!string.IsNullOrEmpty(tuKhoa))
             {
                 sql += " WHERE TenSanPham LIKE N'%' + @TuKhoa + '%'";
@@ -39,11 +41,12 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     {
                         DataTable dt = new DataTable();
                         conn.Open();
-                        da.Fill(dt);
+                        da.Fill(dt); // Nạp dữ liệu qua SqlDataAdapter
                         conn.Close();
 
-                        gvSanPham.DataSource = dt;
-                        gvSanPham.DataBind();
+                        // Liên kết dữ liệu vào điều khiển nâng cao Repeater (Bài 3)
+                        rptLinhKien.DataSource = dt;
+                        rptLinhKien.DataBind();
                     }
                 }
             }
@@ -51,7 +54,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
         protected void btnTimKiem_Click(object sender, EventArgs e)
         {
-            TaiDuLieuLinhKien(txtTimKiem.Text.Trim());
+            TaiDuLieuLinhKienMoi(txtTimKiem.Text.Trim());
         }
     }
 }
