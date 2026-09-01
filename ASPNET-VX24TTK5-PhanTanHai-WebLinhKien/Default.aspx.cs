@@ -20,7 +20,14 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Hàm kết nối SQL Server đọc dữ liệu linh kiện điện tử đổ vào Repeater
         private void TaiDuLieuLinhKienMoi(string tuKhoa)
         {
-            string sql = "SELECT MaSanPham, TenSanPham, GiaBan, SoLuongTon, HinhAnh FROM SanPham";
+            // Sửa lại câu lệnh SQL lấy dữ liệu ở trang chủ
+            string sql = @"SELECT sp.MaSanPham, sp.TenSanPham, sp.GiaBan, sp.SoLuongTon, sp.HinhAnh, 
+                          ISNULL(dm.TenDanhMuc, N'Chưa phân loại') AS TenDanhMuc, 
+                          ISNULL(th.TenThuongHieu, N'Chính hãng') AS TenThuongHieu
+                   FROM SanPham sp
+                   LEFT JOIN DanhMuc dm ON sp.MaDanhMuc = dm.MaDanhMuc
+                   LEFT JOIN ThuongHieu th ON sp.MaThuongHieu = th.MaThuongHieu
+                   WHERE sp.TrangThai = 1"; // Chỉ lấy hàng đang kinh doanh
 
             // Áp dụng thuật toán tìm kiếm tương đối mệnh đề LIKE (Tiêu chí số 7 phiếu điểm)
             if (!string.IsNullOrEmpty(tuKhoa))

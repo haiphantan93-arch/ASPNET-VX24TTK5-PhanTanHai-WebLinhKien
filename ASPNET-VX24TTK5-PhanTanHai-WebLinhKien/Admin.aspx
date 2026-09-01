@@ -57,7 +57,10 @@
         <!-- Bảng hiển thị danh sách linh kiện tích hợp nút Xóa bám sát trang 44 slide của thầy -->
         <div style="flex: 2;">
             <h3 style="margin-top: 0; color: #2d3748;">Danh Sách Linh Kiện Hiện Tại</h3>
-            <asp:GridView ID="gvAdminSanPham" runat="server" AutoGenerateColumns="False" DataKeyNames="MaSanPham" OnRowDeleting="gvAdminSanPham_RowDeleting" CellPadding="10" ForeColor="#333333" GridLines="Both" Width="100%" style="border-collapse: collapse;">
+<asp:GridView ID="gvAdminSanPham" runat="server" AutoGenerateColumns="False" 
+              DataKeyNames="MaSanPham" OnRowCommand="gvAdminSanPham_RowCommand" 
+              CellPadding="10" ForeColor="#333333" GridLines="Both" Width="100%" style="border-collapse: collapse;">
+                
                 <HeaderStyle BackColor="#2c3e50" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#F7F6F3" ForeColor="#333333" HorizontalAlign="Center" />
                 <Columns>
@@ -66,8 +69,34 @@
                     <asp:BoundField DataField="GiaBan" HeaderText="Giá Bán" DataFormatString="{0:N0} đ" />
                     <asp:BoundField DataField="SoLuongTon" HeaderText="Tồn Kho" />
                     
-                    <asp:CommandField ShowDeleteButton="True" DeleteText="Xóa dữ liệu" HeaderText="Thao tác" ControlStyle-ForeColor="#e74c3c" ControlStyle-Font-Bold="true" />
+                    <%-- BỔ SUNG: Hiển thị chữ Trạng thái động trên lưới --%>
+                    <asp:TemplateField HeaderText="Trạng thái">
+                        <ItemTemplate>
+                            <asp:Label ID="lblTrangThai" runat="server" 
+                                       Text='<%# Convert.ToInt32(Eval("TrangThai")) == 1 ? "Đang bán" : "Đã ngừng bán" %>' 
+                                       ForeColor='<%# Convert.ToInt32(Eval("TrangThai")) == 1 ? System.Drawing.Color.Green : System.Drawing.Color.Red %>' 
+                                       Font-Bold="true"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <%-- BIẾN ĐỔI: Chuyển nút Xóa thành nút bấm Ngừng kinh doanh / Kích hoạt lại tùy theo trạng thái sản phẩm --%>
+                    <asp:TemplateField HeaderText="Thao tác">
+                        <ItemTemplate>
+                            <!-- Nút Ngừng kinh doanh: Hiện lên khi sản phẩm đang hoạt động (TrangThai = 1) -->
+                            <asp:LinkButton ID="btnNgungBan" runat="server" Text="Ngừng kinh doanh" 
+                                            CommandName="NgungKinhDoanh" CommandArgument='<%# Eval("MaSanPham") %>'
+                                            Visible='<%# Convert.ToInt32(Eval("TrangThai")) == 1 %>' 
+                                            ForeColor="#e74c3c" Font-Bold="true" style="text-decoration:none;" />
+
+                            <!-- Nút Kích hoạt lại: Tự động hiện lên thay thế khi sản phẩm đã bị ẩn (TrangThai = 0) -->
+                            <asp:LinkButton ID="btnKichHoat" runat="server" Text="🔄 Kích hoạt lại" 
+                                            CommandName="KichHoatLai" CommandArgument='<%# Eval("MaSanPham") %>'
+                                            Visible='<%# Convert.ToInt32(Eval("TrangThai")) == 0 %>' 
+                                            ForeColor="#3498db" Font-Bold="true" style="text-decoration:none;" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
+
             </asp:GridView>
             <br />
             <div style="text-align: right; font-weight: bold;">

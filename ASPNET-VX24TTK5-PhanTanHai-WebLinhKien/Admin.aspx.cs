@@ -71,7 +71,9 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Hàm đọc dữ liệu kho từ SQL Server hiển thị lên GridView
         private void TaiDanhSachAdmin()
         {
-            string sql = "SELECT MaSanPham, TenSanPham, GiaBan, SoLuongTon FROM SanPham";
+            // BỔ SUNG: Thêm cột TrangThai vào câu lệnh SELECT để đồng bộ sang HTML
+            string sql = "SELECT MaSanPham, TenSanPham, GiaBan, SoLuongTon, TrangThai FROM SanPham";
+
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
             {
                 using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -86,6 +88,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 }
             }
         }
+
 
         // Xử lý sự kiện khi ấn nút "Thêm Mới Sản Phẩm"
         protected void btnThem_Click(object sender, EventArgs e)
@@ -149,26 +152,48 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
 
         // Xử lý sự kiện Xóa linh kiện khi bấm chữ "Xóa dữ liệu" trên GridView (Áp dụng trang 44 slide thầy Miền)
-        protected void gvAdminSanPham_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        // Sự kiện bắt lệnh điều khiển động trên lưới GridView
+        protected void gvAdminSanPham_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            // Lấy chính xác Mã sản phẩm của dòng đang chọn thông qua thuộc tính DataKeys
-            int maSP = Convert.ToInt32(gvAdminSanPham.DataKeys[e.RowIndex].Value.ToString());
-
-            string sql = "DELETE FROM SanPham WHERE MaSanPham = @MaSP";
-            using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
+            // Kiểm tra xem Admin bấm vào nút nào dựa trên thuộc tính CommandName
+            if (e.CommandName == "NgungKinhDoanh" || e.CommandName == "KichHoatLai")
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MaSP", maSP);
+                // Lấy ra chính xác Mã sản phẩm truyền về từ ô bấm
+                int maSP = Convert.ToInt32(e.CommandArgument);
+                int trangThaiMoi = (e.CommandName == "NgungKinhDoanh") ? 0 : 1;
 
-                    conn.Open();
-                    cmd.ExecuteNonQuery(); // Thi hành lệnh xóa dữ liệu trong SQL
-                    conn.Close();
+                // Câu lệnh SQL linh hoạt cập nhật trạng thái đóng mở kho hàng
+                string sqlUpdate = "UPDATE SanPham SET TrangThai = @TrangThai WHERE MaSanPham = @MaSP";
+
+                using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
+                {
+                    using (SqlCommand cmd = new SqlCommand(sqlUpdate, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TrangThai", trangThaiMoi);
+                        cmd.Parameters.AddWithValue("@MaSP", maSP);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
                 }
+
+                // Cập nhật dòng chữ thông báo tương ứng cho người quản lý dễ quan sát
+                if (trangThaiMoi == 0)
+                {
+                    lblThongBao.Text = "Đã ngừng kinh doanh và ẩn sản phẩm khỏi giao diện bán hàng!";
+                    lblThongBao.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lblThongBao.Text = "Đã kích hoạt và mở bán lại sản phẩm thành công trên trang chủ!";
+                    lblThongBao.ForeColor = System.Drawing.Color.Green;
+                }
+
+                TaiDanhSachAdmin(); // Tải lại lưới quản trị để cập nhật giao diện nút bấm ngay lập tức
             }
-            lblThongBao.Text = "Đã xóa thành công linh kiện khỏi hệ thống!";
-            lblThongBao.ForeColor = System.Drawing.Color.Blue;
-            TaiDanhSachAdmin(); // Nạp lại bảng dữ liệu sau khi xóa
         }
+
+
     }
 }

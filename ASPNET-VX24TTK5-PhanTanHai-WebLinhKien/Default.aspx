@@ -17,7 +17,7 @@
     <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;" />
 
-    <!-- Phân hệ tra cứu lọc dữ liệu động bám sát từ khóa (Bài 3) -->
+    <!-- Phân hệ tra cứu lọc dữ liệu động bám sát từ khóa -->
     <div style="background: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 30px; text-align: center; border: 1px solid #e2e8f0;">
         <span style="font-weight: bold; font-size: 15px; color: #4a5568;">Tìm kiếm linh kiện:</span>
         <asp:TextBox ID="txtTimKiem" runat="server" Width="350px" Height="32px" placeholder="Nhập tên linh kiện (Arduino, cảm biến, CPU)..." style="padding-left: 10px; margin-left: 10px; border: 1px solid #cbd5e1; border-radius: 4px;"></asp:TextBox>
