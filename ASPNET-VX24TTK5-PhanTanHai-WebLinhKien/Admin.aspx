@@ -9,6 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1100px; margin: 0 auto;">
+            <div style="background: #2c3e50; padding: 12px 20px; border-radius: 6px; margin-bottom: 25px; display: flex; gap: 20px;">
+    <a href="Default.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">⬅ Xem Trang Chủ Cửa Hàng</a>
+    <span style="color: #4a5568;">|</span>
+    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">📦 Quản Lý Kho Linh Kiện</a>
+    <span style="color: #4a5568;">|</span>
+    <a href="AdminDonHang.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">📋 Quản Lý Đơn Hàng & Thống Kê</a>
+</div>
+
     <h2 style="color: #2c3e50; text-align: center;">TRANG QUẢN TRỊ ADMIN - CẬP NHẬT KHO LINH KIỆN</h2>
     <p style="text-align: center; color: #7f8c8d;">Chuyên đề cá nhân môn học ASP.NET - Sinh viên: Phan Tấn Hải</p>
     <hr style="border: 1px solid #eee;" />

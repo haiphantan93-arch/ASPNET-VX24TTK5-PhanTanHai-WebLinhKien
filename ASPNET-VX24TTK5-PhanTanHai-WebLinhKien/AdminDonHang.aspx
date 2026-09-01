@@ -15,10 +15,14 @@
 </p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;" />
 
-    <div style="margin-bottom: 20px;">
-        <a href="Default.aspx" style="text-decoration: none; font-weight: bold; color: #3182ce;">➔ Xem giao diện mua sắm của Khách</a> | 
-        <a href="Admin.aspx" style="text-decoration: none; font-weight: bold; color: #2ecc71; margin-left: 10px;">➔ Xem trang Quản trị kho Linh kiện</a>
-    </div>
+<div style="background: #2c3e50; padding: 12px 20px; border-radius: 6px; margin-bottom: 25px; display: flex; gap: 20px;">
+    <a href="Default.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">⬅ Xem Trang Chủ Cửa Hàng</a>
+    <span style="color: #4a5568;">|</span>
+    <a href="Admin.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">📦 Quản Lý Kho Linh Kiện</a>
+    <span style="color: #4a5568;">|</span>
+    <a href="AdminDonHang.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">📋 Quản Lý Đơn Hàng & Thống Kê</a>
+</div>
+
 
     <h3>DANH SÁCH HÓA ĐƠN KHÁCH ĐẶT MUA MỚI NHẤT</h3>
     <!-- GridView hiển thị danh sách hóa đơn từ bảng DonHang -->
