@@ -10,15 +10,15 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         {
             if (!IsPostBack)
             {
-                TinhTongDoanhThuCuaHang();
+                TinhTongDoanhThuThucTe();
             }
         }
 
-        private void TinhTongDoanhThuCuaHang()
+        private void TinhTongDoanhThuThucTe()
         {
             string chuoiKetNoi = ConfigurationManager.ConnectionStrings["ChuoiKetNoiLinhKien"].ConnectionString;
 
-            // Sử dụng hàm tổng hợp SUM trong SQL để tính tổng tiền của tất cả hóa đơn trong bảng DonHang
+            // Câu lệnh SQL tính tổng tiền thực tế từ tất cả hóa đơn đang có trong bảng DonHang
             string sql = "SELECT ISNULL(SUM(TongTien), 0) FROM DonHang";
 
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
@@ -26,11 +26,10 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     conn.Open();
-                    // Sử dụng ExecuteScalar để lấy ra một giá trị duy nhất (con số tổng tiền)
-                    decimal tongTien = (decimal)cmd.ExecuteScalar();
+                    decimal tongTien = (decimal)cmd.ExecuteScalar(); // Lấy con số tổng doanh thu
                     conn.Close();
 
-                    // Định dạng hiển thị dấu phẩy phân cách hàng nghìn (Ví dụ: 4,700,000)
+                    // Hiển thị lên giao diện Web và định dạng dấu phẩy phân cách hàng nghìn
                     lblTongDoanhThu.Text = tongTien.ToString("N0");
                 }
             }

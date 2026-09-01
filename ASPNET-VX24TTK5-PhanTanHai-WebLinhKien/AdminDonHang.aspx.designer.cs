@@ -31,5 +31,14 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDonHang;
+
+        /// <summary>
+        /// gvChiTietDonHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvChiTietDonHang;
     }
 }
