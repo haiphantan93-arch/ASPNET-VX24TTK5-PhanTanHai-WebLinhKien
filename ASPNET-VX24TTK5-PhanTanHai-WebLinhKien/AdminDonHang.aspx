@@ -10,7 +10,9 @@
     <form id="form1" runat="server">
 <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1100px; margin: 0 auto;">
     <h2 style="color: #2c3e50; text-align: center;">HỆ THỐNG QUẢN LÝ ĐƠN HÀNG LINH KIỆN - ADMIN</h2>
-    <p style="text-align: center; color: #7f8c8d;">Chuyên đề cá nhân ASP.NET - Sinh viên thực hiện: Phan Tấn Hải</p>
+    <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải
+
+</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;" />
 
     <div style="margin-bottom: 20px;">
