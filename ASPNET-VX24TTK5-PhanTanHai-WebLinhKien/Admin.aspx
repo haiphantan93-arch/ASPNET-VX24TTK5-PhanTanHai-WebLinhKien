@@ -12,13 +12,15 @@
             <div style="background: #2c3e50; padding: 12px 20px; border-radius: 6px; margin-bottom: 25px; display: flex; gap: 20px;">
     <a href="Default.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">⬅ Xem Trang Chủ Cửa Hàng</a>
     <span style="color: #4a5568;">|</span>
-    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">📦 Quản Lý Kho Linh Kiện</a>
+    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Kho Linh Kiện</a>
     <span style="color: #4a5568;">|</span>
-    <a href="AdminDonHang.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">📋 Quản Lý Đơn Hàng & Thống Kê</a>
+    <a href="AdminDonHang.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
 </div>
 
     <h2 style="color: #2c3e50; text-align: center;">TRANG QUẢN TRỊ ADMIN - CẬP NHẬT KHO LINH KIỆN</h2>
-    <p style="text-align: center; color: #7f8c8d;">Chuyên đề cá nhân môn học ASP.NET - Sinh viên: Phan Tấn Hải</p>
+    <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải
+
+</p>
     <hr style="border: 1px solid #eee;" />
     
     <div style="display: flex; gap: 30px; margin-top: 20px;">
@@ -39,10 +41,13 @@
             <asp:TextBox ID="txtThongSo" runat="server" Width="95%" Height="50px" TextMode="MultiLine" style="margin-bottom: 15px; padding: 5px; font-family: Arial;"></asp:TextBox>
             
             <label style="font-weight: bold; display: block; margin-bottom: 5px;">Danh mục nhóm linh kiện:</label>
-            <asp:DropDownList ID="ddlDanhMuc" runat="server" Width="98%" Height="35px" style="margin-bottom: 20px; padding: 5px;">
-                <asp:ListItem Text="Bộ vi xử lý (CPU)" Value="1"></asp:ListItem>
-                <asp:ListItem Text="Bộ nhớ (RAM)" Value="2"></asp:ListItem>
-            </asp:DropDownList>
+            <!-- Để ô trống để C# tự nạp dữ liệu động từ bảng DanhMuc -->
+            <asp:DropDownList ID="ddlDanhMuc" runat="server" Width="98%" Height="35px" style="margin-bottom: 15px; padding: 5px;"></asp:DropDownList>
+            
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Thương hiệu / Nhà sản xuất:</label>
+            <!-- Thêm mới để kết nối trực tiếp với bảng ThuongHieu trong SQL -->
+            <asp:DropDownList ID="ddlThuongHieu" runat="server" Width="98%" Height="35px" style="margin-bottom: 20px; padding: 5px;"></asp:DropDownList>
+
             
             <asp:Button ID="btnThem" runat="server" Text="Thêm Mới Sản Phẩm" OnClick="btnThem_Click" BackColor="#2ecc71" ForeColor="White" Font-Bold="true" Width="100%" Height="40px" style="border: none; border-radius: 4px; cursor: pointer;" />
             <br /><br />

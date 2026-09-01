@@ -18,9 +18,9 @@
 <div style="background: #2c3e50; padding: 12px 20px; border-radius: 6px; margin-bottom: 25px; display: flex; gap: 20px;">
     <a href="Default.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">⬅ Xem Trang Chủ Cửa Hàng</a>
     <span style="color: #4a5568;">|</span>
-    <a href="Admin.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">📦 Quản Lý Kho Linh Kiện</a>
+    <a href="Admin.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">Quản Lý Kho Linh Kiện</a>
     <span style="color: #4a5568;">|</span>
-    <a href="AdminDonHang.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">📋 Quản Lý Đơn Hàng & Thống Kê</a>
+    <a href="AdminDonHang.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
 </div>
 
 
@@ -48,7 +48,7 @@
         <HeaderStyle BackColor="#27ae60" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" HorizontalAlign="Center" />
         <Columns>
-            <asp:BoundField DataField="MaDonHang" HeaderText="Mã Đơn" />
+            <asp:BoundField DataField="MaDonHang" HeaderText="Mã Hóa Đơn" />
             
         
             <asp:BoundField DataField="TenKhachHang" HeaderText="Tên Khách Hàng" ItemStyle-HorizontalAlign="Left" />

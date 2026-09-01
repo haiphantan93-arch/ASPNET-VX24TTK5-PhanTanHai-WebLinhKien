@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\admindonhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|d:\\doan_asp\\aspnet-vx24ttk5-phantanhai-weblinhkien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\admindonhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\admindonhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -15,7 +15,19 @@
       "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|d:\\doan_asp\\aspnet-vx24ttk5-phantanhai-weblinhkien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\thongke.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|d:\\doan_asp\\aspnet-vx24ttk5-phantanhai-weblinhkien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\thongke.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\thongke.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -31,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\dathang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B0D76D9-5742-4DE9-84A1-D2DD1FEE6FDB}|ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj|solutionrelative:aspnet-vx24ttk5-phantanhai-weblinhkien\\admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Admin.aspx.designer.cs",
+              "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.designer.cs",
+              "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.designer.cs",
+              "ToolTip": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.designer.cs",
+              "RelativeToolTip": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.designer.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T12:47:44.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AdminDonHang.aspx.cs",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\AdminDonHang.aspx.cs",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\AdminDonHang.aspx.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "DatHang.aspx.cs",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\DatHang.aspx.cs",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\DatHang.aspx.cs",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "DatHang.aspx",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\DatHang.aspx",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\DatHang.aspx",
@@ -99,11 +116,12 @@
               "RelativeToolTip": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\DatHang.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-08-31T14:36:13.451Z"
+              "WhenOpened": "2026-08-31T14:36:13.451Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ThongKe.aspx.cs",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ThongKe.aspx.cs",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ThongKe.aspx.cs",
@@ -115,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ThongKe.aspx",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ThongKe.aspx",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ThongKe.aspx",
@@ -123,20 +141,20 @@
               "RelativeToolTip": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ThongKe.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-08-31T12:56:14.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-31T12:56:14.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "Admin.aspx.cs",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.cs",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.cs",
               "ToolTip": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.cs",
               "RelativeToolTip": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Admin.aspx.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAFYAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwB0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-31T12:24:11.858Z"
+              "WhenOpened": "2026-08-31T12:24:11.858Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -153,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Default.aspx.cs",
               "DocumentMoniker": "D:\\DoAn_ASP\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Default.aspx.cs",
               "RelativeDocumentMoniker": "ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\\Default.aspx.cs",

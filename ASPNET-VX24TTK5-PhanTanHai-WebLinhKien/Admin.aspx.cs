@@ -12,11 +12,61 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // BÀI 4: Chỉ cho phép nạp dữ liệu GỐC khi trang được mở lên LẦN ĐẦU TIÊN (!IsPostBack)
+            // Khi bấm nút Thêm mới (tải lại trang), hệ thống sẽ bỏ qua hàm này, không bị nạp trùng chữ
             if (!IsPostBack)
             {
-                TaiDanhSachAdmin();
+                NapDuLieuComboboxDong(); // Nạp dữ liệu Danh mục và Thương hiệu động từ SQL
+                TaiDanhSachAdmin();      // Tải lưới danh sách sản phẩm bên dưới
             }
         }
+
+
+        // Hàm ADO.NET lôi dữ liệu từ bảng DanhMuc và ThuongHieu nạp vào DropDownList
+        private void NapDuLieuComboboxDong()
+        {
+            using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
+            {
+                conn.Open();
+
+                // 1. Lọc trùng lặp dữ liệu tuyệt đối cho bảng DanhMuc bằng DISTINCT
+                string sqlDM = "SELECT DISTINCT MaDanhMuc, TenDanhMuc FROM DanhMuc";
+                using (SqlCommand cmdDM = new SqlCommand(sqlDM, conn))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmdDM))
+                    {
+                        DataTable dtDM = new DataTable();
+                        da.Fill(dtDM);
+
+                        ddlDanhMuc.DataSource = dtDM;
+                        ddlDanhMuc.DataValueField = "MaDanhMuc";
+                        ddlDanhMuc.DataTextField = "TenDanhMuc";
+                        ddlDanhMuc.DataBind();
+                    }
+                }
+
+                // 2. Lọc trùng lặp dữ liệu tuyệt đối cho bảng ThuongHieu bằng DISTINCT
+                string sqlTH = "SELECT DISTINCT MaThuongHieu, TenThuongHieu FROM ThuongHieu";
+                using (SqlCommand cmdTH = new SqlCommand(sqlTH, conn))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmdTH))
+                    {
+                        DataTable dtTH = new DataTable();
+                        da.Fill(dtTH);
+
+                        ddlThuongHieu.DataSource = dtTH;
+                        ddlThuongHieu.DataValueField = "MaThuongHieu";
+                        ddlThuongHieu.DataTextField = "TenThuongHieu";
+                        ddlThuongHieu.DataBind();
+                    }
+                }
+
+                conn.Close();
+            }
+        }
+
+
+
 
         // Hàm đọc dữ liệu kho từ SQL Server hiển thị lên GridView
         private void TaiDanhSachAdmin()
@@ -67,7 +117,8 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
             }
 
             // 4. Nếu mọi dữ liệu hợp lệ, tiến hành lưu vào SQL Server qua ADO.NET
-            string sql = "INSERT INTO SanPham (TenSanPham, GiaBan, SoLuongTon, ThongSoKyThuat, MaDanhMuc) VALUES (@Ten, @Gia, @SoLuong, @ThongSo, @MaDM)";
+            string sql = "INSERT INTO SanPham (TenSanPham, GiaBan, SoLuongTon, ThongSoKyThuat, MaDanhMuc, MaThuongHieu, HinhAnh) VALUES (@Ten, @Gia, @SoLuong, @ThongSo, @MaDM, @MaTH, @Hinh)";
+
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -77,7 +128,10 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     cmd.Parameters.AddWithValue("@SoLuong", soLuong);
                     cmd.Parameters.AddWithValue("@ThongSo", txtThongSo.Text.Trim());
                     cmd.Parameters.AddWithValue("@MaDM", Convert.ToInt32(ddlDanhMuc.SelectedValue));
-
+                    // ... (Các dòng cmd.Parameters.AddWithValue cũ giữ nguyên)
+                    cmd.Parameters.AddWithValue("@MaDM", Convert.ToInt32(ddlDanhMuc.SelectedValue));
+                    cmd.Parameters.AddWithValue("@MaTH", Convert.ToInt32(ddlThuongHieu.SelectedValue)); // Chèn thêm dòng này
+                    cmd.Parameters.AddWithValue("@Hinh", "arduino.jpg"); // Tạm để ảnh mặc định khi thêm mới
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
