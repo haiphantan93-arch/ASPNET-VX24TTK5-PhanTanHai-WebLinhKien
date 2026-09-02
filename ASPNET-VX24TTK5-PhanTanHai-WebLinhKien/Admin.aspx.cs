@@ -93,7 +93,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Xử lý sự kiện khi ấn nút "Thêm Mới Sản Phẩm"
         protected void btnThem_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra ràng buộc dữ liệu đầu vào (Tiêu chí số 5 trong phiếu điểm)
+            // 1. Kiểm tra ràng buộc dữ liệu đầu vào chống trống trường dữ liệu
             if (string.IsNullOrEmpty(txtTenSP.Text) || string.IsNullOrEmpty(txtGia.Text) || string.IsNullOrEmpty(txtSoLuong.Text))
             {
                 lblThongBao.Text = "Lỗi: Vui lòng nhập đầy đủ Tên, Giá và Số lượng linh kiện!";
@@ -101,7 +101,6 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 return;
             }
 
-            // 2. Kiểm tra định dạng số của Giá bán
             decimal giaBan = 0;
             if (!decimal.TryParse(txtGia.Text.Trim(), out giaBan))
             {
@@ -110,45 +109,91 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 return;
             }
 
-            // 3. Kiểm tra định dạng số của Số lượng nhập kho
-            int soLuong = 0;
-            if (!int.TryParse(txtSoLuong.Text.Trim(), out soLuong))
+            int soLuongNhap = 0;
+            if (!int.TryParse(txtSoLuong.Text.Trim(), out soLuongNhap) || soLuongNhap <= 0)
             {
-                lblThongBao.Text = "Lỗi: Số lượng tồn kho phải là số nguyên!";
+                lblThongBao.Text = "Lỗi: Số lượng nhập kho phải là số nguyên dương!";
                 lblThongBao.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
-            // 4. Nếu mọi dữ liệu hợp lệ, tiến hành lưu vào SQL Server qua ADO.NET
-            string sql = "INSERT INTO SanPham (TenSanPham, GiaBan, SoLuongTon, ThongSoKyThuat, MaDanhMuc, MaThuongHieu, HinhAnh) VALUES (@Ten, @Gia, @SoLuong, @ThongSo, @MaDM, @MaTH, @Hinh)";
+            string tenSanPham = txtTenSP.Text.Trim();
+            int maDanhMucChon = Convert.ToInt32(ddlDanhMuc.SelectedValue);
+            int maThuongHieuChon = Convert.ToInt32(ddlThuongHieu.SelectedValue);
+
+            // 2. THUẬT TOÁN TỰ ĐỘNG BẮT ĐUÔI FILE ẢNH THEO THƯƠNG HIỆU
+            string tenFileAnh = "arduino.jpg"; // Mặc định nếu không khớp
+            if (maThuongHieuChon == 1) tenFileAnh = "i5_cpu.jpg";       // Hãng Intel
+            else if (maThuongHieuChon == 2) tenFileAnh = "ram_kingston.jpg"; // Hãng Kingston
+            else if (maThuongHieuChon == 3) tenFileAnh = "ryzen5_cpu.jpg";   // Hãng AMD
+            else if (maThuongHieuChon == 4) tenFileAnh = "rtx3060.jpg";      // Hãng ASUS
+            else if (maThuongHieuChon == 5)
+            {
+                if (tenSanPham.Contains("Cảm biến") || tenSanPham.Contains("DHT11")) tenFileAnh = "cambien.jpg";
+                else if (tenSanPham.Contains("Điện trở")) tenFileAnh = "dientro.jpg";
+                else if (tenSanPham.Contains("ESP8266")) tenFileAnh = "esp8266.jpg";
+            }
 
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                conn.Open();
+
+                // 3. KIỂM TRA XEM SẢN PHẨM ĐÃ TỒN TẠI TRONG KHO CHƯA
+                string sqlCheck = "SELECT MaSanPham FROM SanPham WHERE TenSanPham = @TenCheck";
+                int maSPTonTai = 0;
+
+                using (SqlCommand cmdCheck = new SqlCommand(sqlCheck, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Ten", txtTenSP.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Gia", giaBan);
-                    cmd.Parameters.AddWithValue("@SoLuong", soLuong);
-                    cmd.Parameters.AddWithValue("@ThongSo", txtThongSo.Text.Trim());
-                    cmd.Parameters.AddWithValue("@MaDM", Convert.ToInt32(ddlDanhMuc.SelectedValue));
-                    // ... (Các dòng cmd.Parameters.AddWithValue cũ giữ nguyên)
-                    cmd.Parameters.AddWithValue("@MaDM", Convert.ToInt32(ddlDanhMuc.SelectedValue));
-                    cmd.Parameters.AddWithValue("@MaTH", Convert.ToInt32(ddlThuongHieu.SelectedValue)); // Chèn thêm dòng này
-                    cmd.Parameters.AddWithValue("@Hinh", "arduino.jpg"); // Tạm để ảnh mặc định khi thêm mới
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    cmdCheck.Parameters.AddWithValue("@TenCheck", tenSanPham);
+                    object result = cmdCheck.ExecuteScalar();
+                    if (result != null)
+                    {
+                        maSPTonTai = Convert.ToInt32(result);
+                    }
                 }
+
+                if (maSPTonTai > 0)
+                {
+                    // TÌNH HUỐNG A: Sản phẩm đã có sẵn -> Chạy lệnh UPDATE cộng dồn số lượng tồn kho và cập nhật giá mới
+                    string sqlUpdateTon = "UPDATE SanPham SET SoLuongTon = SoLuongTon + @SoLuongMoi, GiaBan = @GiaMoi, TrangThai = 1 WHERE MaSanPham = @MaSP";
+                    using (SqlCommand cmdUpdate = new SqlCommand(sqlUpdateTon, conn))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@SoLuongMoi", soLuongNhap);
+                        cmdUpdate.Parameters.AddWithValue("@GiaMoi", giaBan);
+                        cmdUpdate.Parameters.AddWithValue("@MaSP", maSPTonTai);
+                        cmdUpdate.ExecuteNonQuery();
+                    }
+                    lblThongBao.Text = "Sản phẩm đã tồn tại. Hệ thống đã tự động cộng dồn số lượng và cập nhật giá bán mới!";
+                    lblThongBao.ForeColor = System.Drawing.Color.Blue;
+                }
+                else
+                {
+                    // TÌNH HUỐNG B: Sản phẩm mới hoàn toàn -> Chạy lệnh INSERT INTO thêm dòng mới tinh
+                    string sqlInsert = "INSERT INTO SanPham (TenSanPham, GiaBan, SoLuongTon, ThongSoKyThuat, MaDanhMuc, MaThuongHieu, HinhAnh, TrangThai) VALUES (@Ten, @Gia, @SoLuong, @ThongSo, @MaDM, @MaTH, @Hinh, 1)";
+                    using (SqlCommand cmdInsert = new SqlCommand(sqlInsert, conn))
+                    {
+                        cmdInsert.Parameters.AddWithValue("@Ten", tenSanPham);
+                        cmdInsert.Parameters.AddWithValue("@Gia", giaBan);
+                        cmdInsert.Parameters.AddWithValue("@SoLuong", soLuongNhap);
+                        cmdInsert.Parameters.AddWithValue("@ThongSo", txtThongSo.Text.Trim());
+                        cmdInsert.Parameters.AddWithValue("@MaDM", maDanhMucChon);
+                        cmdInsert.Parameters.AddWithValue("@MaTH", maThuongHieuChon);
+                        cmdInsert.Parameters.AddWithValue("@Hinh", tenFileAnh);
+                        cmdInsert.ExecuteNonQuery();
+                    }
+                    lblThongBao.Text = "Thêm linh kiện mới vào kho thành công!";
+                    lblThongBao.ForeColor = System.Drawing.Color.Green;
+                }
+
+                conn.Close();
             }
 
-            lblThongBao.Text = "Thêm linh kiện mới thành công!";
-            lblThongBao.ForeColor = System.Drawing.Color.Green;
-
-            TaiDanhSachAdmin(); // Tải lại lưới GridView
+            TaiDanhSachAdmin(); // Nạp lại bảng quản trị kho ngay lập tức
 
             // Xóa sạch ô nhập liệu để chuẩn bị cho lượt nhập tiếp theo
             txtTenSP.Text = txtGia.Text = txtSoLuong.Text = txtThongSo.Text = "";
         }
+
 
 
         // Xử lý sự kiện Xóa linh kiện khi bấm chữ "Xóa dữ liệu" trên GridView (Áp dụng trang 44 slide thầy Miền)

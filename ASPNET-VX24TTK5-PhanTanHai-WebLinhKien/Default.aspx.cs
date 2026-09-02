@@ -32,7 +32,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
             // Áp dụng thuật toán tìm kiếm tương đối mệnh đề LIKE (Tiêu chí số 7 phiếu điểm)
             if (!string.IsNullOrEmpty(tuKhoa))
             {
-                sql += " WHERE TenSanPham LIKE N'%' + @TuKhoa + '%'";
+                sql += " AND sp.TenSanPham LIKE N'%' + @TuKhoa + '%'";
             }
 
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
