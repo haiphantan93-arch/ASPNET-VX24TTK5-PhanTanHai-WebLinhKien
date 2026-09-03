@@ -11,10 +11,11 @@
         <div style="padding: 20px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1200px; margin: 0 auto;">
 <div style="text-align: right; margin-bottom: 15px; font-size: 14px;">
     <span style="color: #7f8c8d;">Bạn là Quản trị viên?</span> 
-    <a href="Admin.aspx" style="color: #9b59b6; text-decoration: none; font-weight: bold; margin-left: 5px;">➔ Đi tới Trang Admin</a>
+    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold; margin-left: 5px;">➔ Đi tới Trang Admin</a>
 </div>
     <h2 style="text-align: center; color: #2c3e50; font-weight: bold;">HỆ THỐNG CỬA HÀNG LINH KIỆN ĐIỆN TỬ CƠ BẢN</h2>
-    <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải</p>
+    <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5</p>
+             <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;" />
 
     <!-- Phân hệ tra cứu lọc dữ liệu động bám sát từ khóa -->

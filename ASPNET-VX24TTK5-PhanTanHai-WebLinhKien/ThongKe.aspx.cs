@@ -6,19 +6,19 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 {
     public partial class ThongKe : System.Web.UI.Page
     {
+        string chuoiKetNoi = ConfigurationManager.ConnectionStrings["ChuoiKetNoiLinhKien"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+         
                 TinhTongDoanhThuThucTe();
-            }
+         
         }
+
 
         private void TinhTongDoanhThuThucTe()
         {
             string chuoiKetNoi = ConfigurationManager.ConnectionStrings["ChuoiKetNoiLinhKien"].ConnectionString;
-
-            // Câu lệnh SQL tính tổng tiền thực tế từ tất cả hóa đơn đang có trong bảng DonHang
             string sql = "SELECT ISNULL(SUM(TongTien), 0) FROM DonHang";
 
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
@@ -26,13 +26,19 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     conn.Open();
-                    decimal tongTien = (decimal)cmd.ExecuteScalar(); // Lấy con số tổng doanh thu
+
+                    // SỬA ĐÒNG NÀY: Dùng Convert.ToDecimal để bẫy lỗi lệch kiểu dữ liệu từ hàm SUM
+                    object result = cmd.ExecuteScalar();
+                    decimal tongTien = Convert.ToDecimal(result);
+
                     conn.Close();
 
-                    // Hiển thị lên giao diện Web và định dạng dấu phẩy phân cách hàng nghìn
+                    // Gán số tiền thực tế lên nhãn hiển thị hộp Card nguyên bản của bạn
                     lblTongDoanhThu.Text = tongTien.ToString("N0");
                 }
             }
         }
+
+
     }
 }

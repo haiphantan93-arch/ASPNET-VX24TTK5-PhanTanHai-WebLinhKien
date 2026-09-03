@@ -40,7 +40,7 @@
         </div>
 
         <div style="margin-top: 10px;">
-            <asp:Button ID="btnXacNhan" runat="server" Text="XÁC NHẬN ĐẶT HÀNG NGAY" OnClick="btnXacNhan_Click" BackColor="#38a169" ForeColor="White" Font-Bold="true" Width="100%" Height="42px" style="border: none; border-radius: 4px; cursor: pointer; font-size: 15px; text-transform: uppercase;" />
+            <asp:Button ID="btnXacNhan" runat="server" Text="XÁC NHẬN ĐẶT HÀNG NGAY" OnClick="btnXacNhan_Click" BackColor="#38a169" ForeColor="White" Font-Bold="true" Width="100%" Height="42px" style="border: none; border-radius: 4px; cursor: pointer; font-size: 18px; text-transform: uppercase;" />
         </div>
         
         <div style="text-align: center; margin-top: 10px;">
@@ -49,7 +49,7 @@
         
         <hr style="border: 0; border-top: 1px solid #edf2f7; margin-top: 10px;" />
         <div style="text-align: center;">
-            <a href="Default.aspx" style="color: #3182ce; text-decoration: none; font-weight: bold; font-size: 14px;">⬅ Quay lại danh sách sản phẩm trang chủ</a>
+            <a href="Default.aspx" style="color: #3182ce; text-decoration: none; font-weight: bold; font-size: 16px;">⬅ Quay lại danh sách sản phẩm trang chủ</a>
         </div>
     </div>
 </div>

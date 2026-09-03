@@ -9,18 +9,22 @@
 <body>
     <form id="form1" runat="server">
         <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1100px; margin: 0 auto;">
-            <div style="background: #2c3e50; padding: 12px 20px; border-radius: 6px; margin-bottom: 25px; display: flex; gap: 20px;">
-    <a href="Default.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">⬅ Xem Trang Chủ Cửa Hàng</a>
-    <span style="color: #4a5568;">|</span>
-    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Kho Linh Kiện</a>
-    <span style="color: #4a5568;">|</span>
-    <a href="AdminDonHang.aspx" style="color: #fff; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
+<div style="background: #2c3e50; padding: 14px 24px; border-radius: 6px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 16px; font-family: 'Segoe UI', Arial, sans-serif;">
+    <a href="Default.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Trở Về Trang Chủ</a>
+    <span style="color: #4a5568; font-weight: bold;">|</span>
+    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Linh Kiện</a>
+    <span style="color: #4a5568; font-weight: bold;">|</span>
+    <a href="AdminDonHang.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
+    <span style="color: #4a5568; font-weight: bold;">|</span>
+    <!-- Đưa mục thống kê lên thanh Menu chung vị trí -->
+    <a href="ThongKe.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Doanh Thu</a>
 </div>
 
-    <h2 style="color: #2c3e50; text-align: center;">TRANG QUẢN TRỊ ADMIN - CẬP NHẬT KHO LINH KIỆN</h2>
-    <p style="text-align: center; color: #7f8c8d;">Đồ án chuyên đề ASP.NET - SV thực hiện: Phan Tấn Hải
 
-</p>
+    <h2 style="color: #2c3e50; text-align: center;">HỆ THỐNG QUẢN TRỊ ADMIN — QUẢN LÝ LINH KIỆN</h2>
+    <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5</p>
+    <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
+
     <hr style="border: 1px solid #eee;" />
     
     <div style="display: flex; gap: 30px; margin-top: 20px;">
@@ -49,7 +53,7 @@
             <asp:DropDownList ID="ddlThuongHieu" runat="server" Width="98%" Height="35px" style="margin-bottom: 20px; padding: 5px;"></asp:DropDownList>
 
             
-            <asp:Button ID="btnThem" runat="server" Text="Thêm Mới Sản Phẩm" OnClick="btnThem_Click" BackColor="#2ecc71" ForeColor="White" Font-Bold="true" Width="100%" Height="40px" style="border: none; border-radius: 4px; cursor: pointer;" />
+            <asp:Button ID="btnThem" runat="server" Text="Thêm Mới Sản Phẩm" OnClick="btnThem_Click" BackColor="#2ecc71" ForeColor="White" Font-Size ="16px" Font-Bold="true" Width="100%" Height="40px" style="border: none; border-radius: 4px; cursor: pointer;" />
             <br /><br />
             <asp:Label ID="lblThongBao" runat="server" ForeColor="#e74c3c" Font-Bold="true"></asp:Label>
         </div>
@@ -66,7 +70,7 @@
                 <Columns>
                     <asp:BoundField DataField="MaSanPham" HeaderText="Mã" ReadOnly="True" />
                     <asp:BoundField DataField="TenSanPham" HeaderText="Tên Linh Kiện" />
-                    <asp:BoundField DataField="GiaBan" HeaderText="Giá Bán" DataFormatString="{0:N0} đ" />
+                    <asp:BoundField DataField="GiaBan" HeaderText="Giá Bán" DataFormatString="{0:N0} VNĐ" />
                     <asp:BoundField DataField="SoLuongTon" HeaderText="Tồn Kho" />
                     
                     <%-- BỔ SUNG: Hiển thị chữ Trạng thái động trên lưới --%>
@@ -99,9 +103,7 @@
 
             </asp:GridView>
             <br />
-            <div style="text-align: right; font-weight: bold;">
-                <a href="ThongKe.aspx" style="color: #9b59b6; text-decoration: none;">📊 Xem báo cáo thống kê doanh thu cửa hàng ➔</a>
-            </div>
+
         </div>
     </div>
 </div>

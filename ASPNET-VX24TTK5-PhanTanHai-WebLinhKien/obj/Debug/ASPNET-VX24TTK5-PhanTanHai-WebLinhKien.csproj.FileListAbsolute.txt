@@ -1,5 +1,3 @@
-D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj.AssemblyReference.cache
-D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj.CoreCompileInputs.cache
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.dll.config
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.dll
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.pdb
@@ -54,6 +52,8 @@ D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-We
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\roslyn\VBCSCompiler.exe.config
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj.AssemblyReference.cache
+D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.csproj.CoreCompileInputs.cache
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-V.D4423E77.Up2Date
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.dll
 D:\DoAn_ASP\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien\obj\Debug\ASPNET-VX24TTK5-PhanTanHai-WebLinhKien.pdb
