@@ -27,13 +27,11 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 {
                     conn.Open();
 
-                    // SỬA ĐÒNG NÀY: Dùng Convert.ToDecimal để bẫy lỗi lệch kiểu dữ liệu từ hàm SUM
                     object result = cmd.ExecuteScalar();
                     decimal tongTien = Convert.ToDecimal(result);
 
                     conn.Close();
 
-                    // Gán số tiền thực tế lên nhãn hiển thị hộp Card nguyên bản của bạn
                     lblTongDoanhThu.Text = tongTien.ToString("N0");
                 }
             }

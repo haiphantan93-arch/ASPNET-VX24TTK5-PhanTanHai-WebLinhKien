@@ -15,7 +15,7 @@
 </div>
     <h2 style="text-align: center; color: #2c3e50; font-weight: bold;">HỆ THỐNG CỬA HÀNG LINH KIỆN ĐIỆN TỬ CƠ BẢN</h2>
     <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5</p>
-             <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
+             <p style="text-align: center; color: #7f8c8d;">Giảng viên hướng dẫn: TS. Đoàn Phước Miền</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;" />
 
     <!-- Phân hệ tra cứu lọc dữ liệu động bám sát từ khóa -->
@@ -25,7 +25,7 @@
         <asp:Button ID="btnTimKiem" runat="server" Text="Tìm Kiếm Tương Đối" OnClick="btnTimKiem_Click" BackColor="#3498db" ForeColor="White" Font-Bold="true" Height="38px" style="border:none; border-radius: 4px; cursor:pointer; margin-left: 10px; padding: 0 20px;" />
     </div>
 
-    <!-- Danh sách linh kiện hiển thị dạng Card lưới bằng Repeater (Bài 3 Nâng Cao) -->
+    <!-- Danh sách linh kiện hiển thị dạng Card lưới bằng Repeater-->
     <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
         <asp:Repeater ID="rptLinhKien" runat="server">
             <ItemTemplate>
@@ -40,7 +40,7 @@
                         Số lượng kho: <%# Eval("SoLuongTon") %> cái
                     </div>
                     
-                    <!-- Nút Đặt mua chuyển hướng sang trang đặt hàng kèm mã sản phẩm ID qua QueryString (Bài 4) -->
+                    <!-- Nút Đặt mua chuyển hướng sang trang đặt hàng kèm mã sản phẩm ID qua QueryString-->
                     <a href='<%# "DatHang.aspx?id=" + Eval("MaSanPham") %>' style="display: block; background: #38a169; color: white; text-decoration: none; padding: 10px 0; border-radius: 4px; font-weight: bold; font-size: 14px; text-transform: uppercase;">Đặt Mua Nhanh</a>
                 </div>
             </ItemTemplate>

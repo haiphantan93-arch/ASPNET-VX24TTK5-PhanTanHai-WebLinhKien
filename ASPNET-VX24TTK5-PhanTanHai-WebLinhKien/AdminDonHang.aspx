@@ -24,7 +24,7 @@
     <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
 
 </p>
-     <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
+     <p style="text-align: center; color: #7f8c8d;">Giảng viên hướng dẫn: TS. Đoàn Phước Miền</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;" />
 
 

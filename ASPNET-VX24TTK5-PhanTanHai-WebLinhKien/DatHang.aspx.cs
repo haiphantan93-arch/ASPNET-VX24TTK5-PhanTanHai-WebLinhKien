@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Configuration;
-using System.Data.SqlClient; // Bài 5: Bộ thư viện kết nối dữ liệu của môn học
+using System.Data.SqlClient; 
 
 namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 {
@@ -14,7 +14,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Bài 4: Sử dụng đối tượng Request.QueryString để bắt tham số ngầm 'id' từ trang chủ truyền sang
+            //Sử dụng đối tượng Request.QueryString để bắt tham số ngầm 'id' từ trang chủ truyền sang
             if (Request.QueryString["id"] != null)
             {
                 maSanPhamChon = Convert.ToInt32(Request.QueryString["id"]);
@@ -41,7 +41,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 {
                     cmd.Parameters.AddWithValue("@MaSP", id);
                     conn.Open();
-                    using (SqlDataReader dr = cmd.ExecuteReader()) // Dùng SqlDataReader đọc dữ liệu đơn lẻ (Bài 5)
+                    using (SqlDataReader dr = cmd.ExecuteReader()) // Dùng SqlDataReader đọc dữ liệu đơn lẻ
                     {
                         if (dr.Read())
                         {
@@ -58,7 +58,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Sự kiện khi khách hàng bấm nút xác nhận đặt mua linh kiện
         protected void btnXacNhan_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra bẫy lỗi bỏ trống thông tin (Tiêu chí số 5 phiếu điểm)
+            // 1. Kiểm tra bẫy lỗi bỏ trống thông tin 
             if (string.IsNullOrEmpty(txtTenKhach.Text.Trim()) || string.IsNullOrEmpty(txtSoDienThoai.Text.Trim()) || string.IsNullOrEmpty(txtSoLuongMua.Text.Trim()))
             {
                 lblThongBao.Text = "Lỗi: Vui lòng nhập đầy đủ thông tin giao hàng!";
@@ -75,7 +75,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 return;
             }
 
-            // Lấy ra số lượng tồn kho hiện tại để đối chiếu bẫy lỗi logic kinh doanh
+            // Lấy ra số lượng tồn kho hiện tại để đối chiếu bẫy lỗi logic
             int tonKhoHienTai = Convert.ToInt32(lblTonKho.Text);
             if (soLuongMua > tonKhoHienTai)
             {
@@ -103,7 +103,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     cmdDon.Parameters.AddWithValue("@Sdt", txtSoDienThoai.Text.Trim());
                     cmdDon.Parameters.AddWithValue("@TongTien", tongTienDonHang);
 
-                    maDonHangVuaTao = Convert.ToInt32(cmdDon.ExecuteScalar()); // Lấy ra mã đơn hàng tự động tăng vừa sinh
+                    maDonHangVuaTao = Convert.ToInt32(cmdDon.ExecuteScalar()); 
                 }
 
                 // Hành động B: Chèn thông tin sản phẩm mua tương ứng vào bảng ChiTietDonHang (Xác lập mối quan hệ n-n)
@@ -118,7 +118,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     cmdChiTiet.ExecuteNonQuery();
                 }
 
-                // Hành động C (Cực kỳ đắt giá): Cập nhật tự động trừ số lượng tồn của linh kiện đó trong kho (Ràng buộc toàn vẹn logic)
+                // Hành động C: Cập nhật tự động trừ số lượng tồn của linh kiện đó trong kho (Ràng buộc toàn vẹn logic)
                 string sqlTruKho = "UPDATE SanPham SET SoLuongTon = SoLuongTon - @SoLuongMua WHERE MaSanPham = @MaSP";
                 using (SqlCommand cmdTru = new SqlCommand(sqlTruKho, conn))
                 {

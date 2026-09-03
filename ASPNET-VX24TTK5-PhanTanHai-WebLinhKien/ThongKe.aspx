@@ -1,7 +1,7 @@
 ﻿    
     <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ThongKe.aspx.cs" Inherits="ASPNET_VX24TTK5_PhanTanHai_WebLinhKien.ThongKe" %>
 
-<!-- 1. Thanh Menu 4 mục trải rộng cố định lên trên cùng đầu trang -->
+<!-- Thanh Menu 4 mục trải rộng cố định lên trên cùng đầu trang -->
     
     <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1100px; margin: 0 auto;">
    <div style="background: #2c3e50; padding: 14px 24px; border-radius: 6px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 16px; font-family: 'Segoe UI', Arial, sans-serif;">
@@ -19,13 +19,13 @@
     <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
 
 </p>
-         <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
+         <p style="text-align: center; color: #7f8c8d;">Giảng viên hướng dẫn: TS. Đoàn Phước Miền</p>
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;" />
 
         <div style="width: 80px; height: 3px; background-color: #e74c3c; margin: 12px auto 0 auto; border-radius: 2px;"></div>
     </div>
 
-    <!-- 3. Khu vực hiển thị con số thống kê rực rỡ, rộng rãi -->
+    <!-- Khu vực hiển thị con số thống kê -->
     <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 40px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); max-width: 600px; margin: 0 auto;">
         <p style="color: #4a5568; font-size: 18px; font-weight: bold; margin-bottom: 15px;">
             Tổng doanh thu ghi nhận từ hệ thống đơn hàng thực tế:

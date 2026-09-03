@@ -12,8 +12,6 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // BÀI 4: Chỉ cho phép nạp dữ liệu GỐC khi trang được mở lên LẦN ĐẦU TIÊN (!IsPostBack)
-            // Khi bấm nút Thêm mới (tải lại trang), hệ thống sẽ bỏ qua hàm này, không bị nạp trùng chữ
             if (!IsPostBack)
             {
                 NapDuLieuComboboxDong(); // Nạp dữ liệu Danh mục và Thương hiệu động từ SQL
@@ -71,7 +69,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Hàm đọc dữ liệu kho từ SQL Server hiển thị lên GridView
         private void TaiDanhSachAdmin()
         {
-            // BỔ SUNG: Thêm cột TrangThai vào câu lệnh SELECT để đồng bộ sang HTML
+            // hêm cột TrangThai vào câu lệnh SELECT để đồng bộ sang HTML
             string sql = "SELECT MaSanPham, TenSanPham, GiaBan, SoLuongTon, TrangThai FROM SanPham";
 
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
@@ -93,7 +91,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Xử lý sự kiện khi ấn nút "Thêm Mới Sản Phẩm"
         protected void btnThem_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra ràng buộc dữ liệu đầu vào chống trống trường dữ liệu
+            // 1. Kiểm tra ràng buộc dữ liệu đầu vào
             if (string.IsNullOrEmpty(txtTenSP.Text) || string.IsNullOrEmpty(txtGia.Text) || string.IsNullOrEmpty(txtSoLuong.Text))
             {
                 lblThongBao.Text = "Lỗi: Vui lòng nhập đầy đủ Tên, Giá và Số lượng linh kiện!";
@@ -196,7 +194,6 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
 
 
-        // Xử lý sự kiện Xóa linh kiện khi bấm chữ "Xóa dữ liệu" trên GridView (Áp dụng trang 44 slide thầy Miền)
         // Sự kiện bắt lệnh điều khiển động trên lưới GridView
         protected void gvAdminSanPham_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -235,7 +232,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     lblThongBao.ForeColor = System.Drawing.Color.Green;
                 }
 
-                TaiDanhSachAdmin(); // Tải lại lưới quản trị để cập nhật giao diện nút bấm ngay lập tức
+                TaiDanhSachAdmin(); 
             }
         }
 

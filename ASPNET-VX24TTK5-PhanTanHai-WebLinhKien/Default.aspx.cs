@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Configuration;
-using System.Data.SqlClient; // Bài 5: Thư viện ADO.NET căn bản của môn học
+using System.Data.SqlClient; 
 
 namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 {
@@ -20,7 +20,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
         // Hàm kết nối SQL Server đọc dữ liệu linh kiện điện tử đổ vào Repeater
         private void TaiDuLieuLinhKienMoi(string tuKhoa)
         {
-            // Sửa lại câu lệnh SQL lấy dữ liệu ở trang chủ
+            // Câu lệnh SQL lấy dữ liệu ở trang chủ
             string sql = @"SELECT sp.MaSanPham, sp.TenSanPham, sp.GiaBan, sp.SoLuongTon, sp.HinhAnh, 
                           ISNULL(dm.TenDanhMuc, N'Chưa phân loại') AS TenDanhMuc, 
                           ISNULL(th.TenThuongHieu, N'Chính hãng') AS TenThuongHieu
@@ -29,7 +29,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                    LEFT JOIN ThuongHieu th ON sp.MaThuongHieu = th.MaThuongHieu
                    WHERE sp.TrangThai = 1"; // Chỉ lấy hàng đang kinh doanh
 
-            // Áp dụng thuật toán tìm kiếm tương đối mệnh đề LIKE (Tiêu chí số 7 phiếu điểm)
+            // Áp dụng thuật toán tìm kiếm tương đối mệnh đề LIKE 
             if (!string.IsNullOrEmpty(tuKhoa))
             {
                 sql += " AND sp.TenSanPham LIKE N'%' + @TuKhoa + '%'";
@@ -48,10 +48,10 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                     {
                         DataTable dt = new DataTable();
                         conn.Open();
-                        da.Fill(dt); // Nạp dữ liệu qua SqlDataAdapter
+                        da.Fill(dt); 
                         conn.Close();
 
-                        // Liên kết dữ liệu vào điều khiển nâng cao Repeater (Bài 3)
+                        // Liên kết dữ liệu vào điều khiển nâng cao Repeater 
                         rptLinhKien.DataSource = dt;
                         rptLinhKien.DataBind();
                     }

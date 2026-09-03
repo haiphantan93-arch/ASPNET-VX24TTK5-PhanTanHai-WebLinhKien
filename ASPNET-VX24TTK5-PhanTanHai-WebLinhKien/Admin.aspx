@@ -9,26 +9,25 @@
 <body>
     <form id="form1" runat="server">
         <div style="padding: 30px; font-family: 'Segoe UI', Arial, sans-serif; max-width: 1100px; margin: 0 auto;">
-<div style="background: #2c3e50; padding: 14px 24px; border-radius: 6px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 16px; font-family: 'Segoe UI', Arial, sans-serif;">
-    <a href="Default.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Trở Về Trang Chủ</a>
-    <span style="color: #4a5568; font-weight: bold;">|</span>
-    <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Linh Kiện</a>
-    <span style="color: #4a5568; font-weight: bold;">|</span>
-    <a href="AdminDonHang.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
-    <span style="color: #4a5568; font-weight: bold;">|</span>
-    <!-- Đưa mục thống kê lên thanh Menu chung vị trí -->
-    <a href="ThongKe.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Doanh Thu</a>
-</div>
+            <div style="background: #2c3e50; padding: 14px 24px; border-radius: 6px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 16px; font-family: 'Segoe UI', Arial, sans-serif;">
+                <a href="Default.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Trở Về Trang Chủ</a>
+                <span style="color: #4a5568; font-weight: bold;">|</span>
+                <a href="Admin.aspx" style="color: #2ecc71; text-decoration: none; font-weight: bold;">Quản Lý Linh Kiện</a>
+                <span style="color: #4a5568; font-weight: bold;">|</span>
+                <a href="AdminDonHang.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Đơn Hàng</a>
+                <span style="color: #4a5568; font-weight: bold;">|</span>
+                <a href="ThongKe.aspx" style="color: #ffffff; text-decoration: none; font-weight: bold;">Quản Lý Doanh Thu</a>
+            </div>
 
 
-    <h2 style="color: #2c3e50; text-align: center;">HỆ THỐNG QUẢN TRỊ ADMIN — QUẢN LÝ LINH KIỆN</h2>
-    <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5</p>
-    <p style="text-align: center; color: #7f8c8d;">Giáo viên hướng dẫn: TS. Đoàn Phước Miền</p>
+            <h2 style="color: #2c3e50; text-align: center;">HỆ THỐNG QUẢN TRỊ ADMIN — QUẢN LÝ LINH KIỆN</h2>
+            <p style="text-align: center; color: #7f8c8d;">Chuyên đề ASP.NET - Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5</p>
+            <p style="text-align: center; color: #7f8c8d;">Giảng viên hướng dẫn: TS. Đoàn Phước Miền</p>
 
-    <hr style="border: 1px solid #eee;" />
+            <hr style="border: 1px solid #eee;" />
     
     <div style="display: flex; gap: 30px; margin-top: 20px;">
-        <!-- Form nhập liệu linh kiện mới dùng các Control cơ bản của Bài 3 -->
+        <!-- Form nhập liệu linh kiện mới -->
         <div style="flex: 1; background-color: #f8f9fa; padding: 20px; border-radius: 5px; height: fit-content; border: 1px solid #e2e8f0;">
             <h3 style="margin-top: 0; color: #2d3748;">Thêm Linh Kiện Mới</h3>
             
@@ -58,10 +57,10 @@
             <asp:Label ID="lblThongBao" runat="server" ForeColor="#e74c3c" Font-Bold="true"></asp:Label>
         </div>
 
-        <!-- Bảng hiển thị danh sách linh kiện tích hợp nút Xóa bám sát trang 44 slide của thầy -->
+        <!-- Bảng hiển thị danh sách linh kiện -->
         <div style="flex: 2;">
             <h3 style="margin-top: 0; color: #2d3748;">Danh Sách Linh Kiện Hiện Tại</h3>
-<asp:GridView ID="gvAdminSanPham" runat="server" AutoGenerateColumns="False" 
+                <asp:GridView ID="gvAdminSanPham" runat="server" AutoGenerateColumns="False" 
               DataKeyNames="MaSanPham" OnRowCommand="gvAdminSanPham_RowCommand" 
               CellPadding="10" ForeColor="#333333" GridLines="Both" Width="100%" style="border-collapse: collapse;">
                 
@@ -73,7 +72,7 @@
                     <asp:BoundField DataField="GiaBan" HeaderText="Giá Bán" DataFormatString="{0:N0} VNĐ" />
                     <asp:BoundField DataField="SoLuongTon" HeaderText="Tồn Kho" />
                     
-                    <%-- BỔ SUNG: Hiển thị chữ Trạng thái động trên lưới --%>
+                    <%-- Hiển thị chữ Trạng thái động trên lưới --%>
                     <asp:TemplateField HeaderText="Trạng thái">
                         <ItemTemplate>
                             <asp:Label ID="lblTrangThai" runat="server" 
@@ -83,7 +82,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <%-- BIẾN ĐỔI: Chuyển nút Xóa thành nút bấm Ngừng kinh doanh / Kích hoạt lại tùy theo trạng thái sản phẩm --%>
+                    <%-- Chuyển nút Xóa thành nút bấm Ngừng kinh doanh / Kích hoạt lại tùy theo trạng thái sản phẩm --%>
                     <asp:TemplateField HeaderText="Thao tác">
                         <ItemTemplate>
                             <!-- Nút Ngừng kinh doanh: Hiện lên khi sản phẩm đang hoạt động (TrangThai = 1) -->

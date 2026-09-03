@@ -19,7 +19,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
 
         private void TaiDanhSachDonHangAdmin()
         {
-            // 1. Giữ nguyên đoạn code nạp dữ liệu bảng DonHang cũ của bạn ở đây...
+        
             string sql = "SELECT MaDonHang, NgayDat, TenKhachHang, SoDienThoai, TongTien FROM DonHang ORDER BY MaDonHang DESC";
             using (SqlConnection conn = new SqlConnection(chuoiKetNoi))
             {
@@ -36,7 +36,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                 }
             }
 
-            // 2. BỔ SUNG: Đoạn code ADO.NET chạy lệnh JOIN 3 bảng để hiển thị rõ món đồ khách mua
+            // lệnh JOIN 3 bảng để hiển thị rõ món đồ khách mua
             string sqlJoin = @"SELECT ct.MaDonHang, dh.TenKhachHang, sp.TenSanPham, ct.SoLuongMua, ct.DonGiaMua 
                                FROM ChiTietDonHang ct
                                INNER JOIN DonHang dh ON ct.MaDonHang = dh.MaDonHang
@@ -54,7 +54,7 @@ namespace ASPNET_VX24TTK5_PhanTanHai_WebLinhKien
                         da.Fill(dtChiTiet);
                         conn.Close();
 
-                        // Nạp dữ liệu vào lưới GridView chi tiết mới thêm
+               
                         gvChiTietDonHang.DataSource = dtChiTiet;
                         gvChiTietDonHang.DataBind();
                     }

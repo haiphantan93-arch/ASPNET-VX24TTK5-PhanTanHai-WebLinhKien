@@ -13,7 +13,7 @@
     <p style="text-align: center; color: #7f8c8d; margin-bottom: 25px;">Vui lòng kiểm tra thông tin sản phẩm và nhập thông tin giao hàng</p>
     <hr style="border: 0; border-top: 1px solid #edf2f7; margin-bottom: 25px;" />
 
-    <!-- Phân hệ hiển thị thông tin linh kiện được chọn mua (Bài 3) -->
+    <!-- Phân hệ hiển thị thông tin linh kiện được chọn mua  -->
     <div style="background-color: #ebf8ff; padding: 15px; border-radius: 6px; margin-bottom: 25px; border: 1px solid #bee3f8;">
         <h4 style="margin: 0 0 10px 0; color: #2b6cb0; font-size: 16px;">Thông tin linh kiện:</h4>
         <p style="margin: 5px 0;"><b>Tên sản phẩm:</b> <asp:Label ID="lblTenLinhKien" runat="server" ForeColor="#2d3748" Font-Bold="true"></asp:Label></p>
@@ -21,7 +21,7 @@
         <p style="margin: 5px 0;"><b>Số lượng hiện có trong kho:</b> <asp:Label ID="lblTonKho" runat="server" ForeColor="#2f855a"></asp:Label> cái</p>
     </div>
 
-    <!-- Form thu thập thông tin khách hàng dùng các Control cơ bản Bài 3 từ slide thầy Miền -->
+    <!-- Form thu thập thông tin khách hàng  -->
     <div style="display: flex; flex-direction: column; gap: 15px;">
         <div>
             <label style="font-weight: bold; display: block; margin-bottom: 5px; color: #4a5568;">Họ và tên khách hàng:</label>
