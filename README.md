@@ -14,6 +14,10 @@
 * **Sinh viên thực hiện:** Phan Tấn Hải
 
 * **Mã số lớp:** VX24TTK5
+  
+* **Email:** haiphantan93@gmail.com
+
+* * **Số điện thoại:** 0369473165
 
 * **Các công cụ dùng để làm:** Phần mềm Visual Studio (ngôn ngữ C#), phần mềm quản lý dữ liệu SQL Server, và quản lý lịch sử code bằng GitHub.
 
