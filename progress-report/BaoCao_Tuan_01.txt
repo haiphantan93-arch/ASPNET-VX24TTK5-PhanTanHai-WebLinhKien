@@ -1,0 +1,10 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 1 (Từ 20/7 đến 26/7)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+
+- Đọc tài liệu môn học và quyết định chọn đề tài cá nhân: "Website bán linh kiện điện tử".
+- Xem lại các video bài giảng trực tuyến của Thầy để nắm rõ yêu cầu và các bước làm bài.
+- Nghiên cứu sử dụng phần mềm lập trình Visual Studio 2026 và phần mềm quản lý cơ sở dữ liệu SQL Server 2022 để chuẩn bị cài đặt cho máy tính.
+- Đi xem thực tế vài cửa hàng bán linh kiện máy tính gần nhà để học cách họ quản lý tên sản phẩm, giá cả và số lượng hàng trong kho để lấy ý tưởng làm các chức năng cơ bản cho web.
+- Tuần này hoàn toàn học lý thuyết và tìm hiểu thực tế, chưa viết code.

@@ -1,0 +1,8 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 4 (Từ 10/8 đến 16/8)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+- Mở phần mềm Visual Studio 2026 để thiết kế giao diện HTML/CSS ban đầu cho trang chủ (Default.aspx), tập cách dùng ô lưới Card động để hiển thị hình ảnh linh kiện ra màn hình.
+- Thiết kế Form để khách hàng nhập thông tin giao hàng tại trang đặt mua (DatHang.aspx).
+- Sử dụng công cụ AI hỗ trợ tìm hiểu cách viết lệnh tìm kiếm tương đối (lọc sản phẩm theo từ khóa bất kỳ) và cách bẫy lỗi để khách không được bỏ trống thông tin họ tên, số điện thoại.
+- Toàn bộ phần giao diện này em mới chỉ viết nháp và chạy thử trên máy tính cá nhân để kiểm tra lỗi hiển thị, chưa cấu hình và đưa dự án lên mạng GitHub.

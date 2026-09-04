@@ -1,0 +1,9 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 2 (Từ 27/7 đến 02/8)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+- Lên mạng tìm kiếm và lưu sẵn hình ảnh của các sản phẩm (như mạch Arduino, chip Intel, thanh RAM Kingston, cảm biến DHT11) để làm ảnh hiển thị cho website.
+- Suy nghĩ về phong cách thiết kế giao diện sao cho đơn giản, gọn gàng, phù hợp với một đồ án cá nhân.
+- Sử dụng các công cụ AI trên mạng để hỗ trợ tư vấn, lên phương án thiết kế các bảng dữ liệu cơ bản cần thiết cho web để không bị thừa thãi thông tin.
+- Tiến hành làm file báo cáo các yêu cầu đầu tiên.
+- Tuần này chỉ làm việc trên file Word báo cáo và gom nhặt hình ảnh sản phẩm.

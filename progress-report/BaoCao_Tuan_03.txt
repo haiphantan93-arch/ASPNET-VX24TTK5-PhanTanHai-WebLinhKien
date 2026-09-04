@@ -1,0 +1,8 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 3 (Từ 03/8 đến 09/8)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+- Tiến hành tải và cài đặt thành công phần mềm Visual Studio 2026 cùng phần mềm SQL Server 2022 lên máy tính cá nhân.
+- Tập viết các câu lệnh SQL cơ bản để tạo thử cấu trúc các bảng và liên kết khóa ngoại trên phần mềm SQL Server 2022 xem có bị lỗi gì không.
+- Tiếp tục học trực tuyến các nội dung về Bài 3 (Các thanh hiển thị dữ liệu GridView, Repeater) và Bài 4 (Quản lý trạng thái vòng đời trang) trong slide bài giảng của Thầy.
+- Giai đoạn này em chỉ thực hành viết các câu lệnh SQL viết nháp trên máy tính cá nhân để học cách dùng phần mềm, chưa viết code cho dự án.

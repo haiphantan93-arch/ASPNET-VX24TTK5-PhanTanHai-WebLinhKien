@@ -1,0 +1,9 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 5 (Từ 17/8 đến 23/8)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+- Tiến hành thiết kế giao diện trang quản trị của Admin (Admin.aspx) gồm Form nhập sản phẩm và bảng danh sách trên Visual Studio 2026.
+- Viết code xử lý bẫy lỗi xung đột bộ nhớ đọc dữ liệu, chuyển sang dùng SqlDataAdapter để đổ dữ liệu an toàn.
+- Bấm nút chạy thử trên máy tính cá nhân luồng đặt mua hàng xem hệ thống có tự động trừ số lượng tồn kho trong database của SQL Server 2022 chuẩn xác chưa.
+- Gõ thêm nội dung Chương 2 cho file Word báo cáo.
+

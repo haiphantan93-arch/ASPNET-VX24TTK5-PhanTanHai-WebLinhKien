@@ -1,0 +1,9 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 6 + 7 (Từ 24/8 đến 04/9 - Giai đoạn chốt đồ án)
+Sinh viên thực hiện: Phan Tấn Hải - Lớp: VX24TTK5
+
+Nội dung công việc:
+- Giai đoạn chạy nước rút cực kỳ quan trọng: Tập trung toàn bộ thời gian để ráp nối tất cả các trang web lại thành một hệ thống khép kín.
+- Hoàn thiện thanh Menu 4 mục đồng bộ, lập trình thuật toán tự động cộng dồn tồn kho khi nhập trùng tên sản phẩm, và viết cơ chế Xóa mềm (Ngừng kinh doanh) bám sát Bài 4 để giữ an toàn cho lịch sử hóa đơn cũ.
+- Viết code cho trang Thống kê báo cáo tự động tính tổng tiền từ dữ liệu thật bằng hàm SUM trên Visual Studio 2026.
+- **BẮT ĐẦU SỬ DỤNG GITHUB DESKTOP (Từ ngày 30/8 đến 04/9):** Tìm hiểu và tải phần mềm GitHub Desktop để phục vụ việc lưu trữ mã nguồn lên đám mây.
+- Vì làm muộn ở tuần cuối do đọc thiếu hướng dẫn ban đầu nên em đã gõ cấu hình README giải trình chi tiết chức năng, tạo thư mục progress-report để nộp toàn bộ file nhật ký các tuần lên mạng, thực hiện mời Giảng viên làm cộng tác viên (antonio86doan@gmail.com) và thực hiện liên tiếp chuỗi 15 lượt Commit dày đặc thông qua phần mềm GitHub Desktop từ ngày 30/8 đến 3/9 để đóng gói toàn bộ mã nguồn lên hệ thống. Lịch sử Commit của em sẽ hiển thị bắt đầu tập trung từ mốc thời gian nước rút này.
